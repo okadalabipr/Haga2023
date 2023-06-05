@@ -1,0 +1,59 @@
+# parameter set: 22
+
+
+def param_values():
+    x = [0] * C.NUM
+    x[C.kf_1_TGFbeta] = 4.923e-01
+    x[C.Kmf_1_TGFbeta] = 2.529e+00
+    x[C.k_on_FMOD] = 1.000e+00
+    x[C.k_off_FMOD] = 1.000e+00
+    x[C.Rec_act] = 5.970e-01
+    x[C.pRec_debind] = 8.082e-03
+    x[C.S2tot] = 6.000e-02
+    x[C.S3tot] = 3.800e-01
+    x[C.S4tot] = 4.400e-03
+    x[C.kf_2_TGFbeta] = 4.664e-01
+    x[C.Kmf_2_TGFbeta] = 4.889e+00
+    x[C.k_inhibit_TGF] = 1.569e+00
+    x[C.S_dephosphos] = 1.001e-01
+    x[C.S_dephos] = 1.947e+00
+    x[C.kf_3_TGFbeta] = 9.264e-01
+    x[C.Kmf_3_TGFbeta] = 1.004e-01
+    x[C.k_on_ppS2_ppS3] = 8.995e-01
+    x[C.k_on_ppS2_ppS3_S4] = 9.071e-01
+    x[C.k_off_ppS2_ppS3_S4] = 3.579e-01
+    x[C.prod_mS7] = 2.069e-01
+    x[C.n1_TGF] = 1.000e+00
+    x[C.Km_1_TGF] = 2.299e-01
+    x[C.mS7_turn] = 8.564e+00
+    x[C.prod_S7] = 2.258e-01
+    x[C.prod_mcFOS] = 1.848e+01
+    x[C.n2_TGF] = 1.000e+00
+    x[C.Km_2_TGF] = 2.049e-02
+    x[C.mcFOS_turn] = 2.056e-02
+    x[C.prod_cFOS] = 1.134e-01
+    x[C.k_on_ppS2_ppS3_S4_cFOS] = 6.391e-01
+    x[C.k_off_ppS2_ppS3_S4_cFOS] = 2.785e-01
+    x[C.prod_mTHBS1] = 2.157e+02
+    x[C.n4_TGF] = 1.000e+00
+    x[C.Km_4_TGF] = 1.102e-01
+    x[C.THBS1_turn] = 5.464e-03
+    x[C.prod_THBS1] = 3.524e+00
+    x[C.w_THBS1] = 1.234e-01
+    x[C.w_TGFBR1] = 2.282e-01
+    x[C.w_TGFBR2] = 3.128e-01
+    x[C.w_SMAD7] = 1.021e-01
+    x[C.w_cFOS] = 1.047e-01
+    x[C.degrad_cFOS] = 1.000e-01
+
+
+def initial_values():
+    y0 = [0] * V.NUM
+    y0[V.TGFb_inact] = 1.000e+00
+    y0[V.TGFBR_inact] = 4.475e+01
+    y0[V.S2] = 6.000e-02
+    y0[V.S3] = 3.800e-01
+    y0[V.S4] = 4.400e-03
+    y0[V.mS7] = 2.105e+00
+    y0[V.mcFOS] = 1.225e-01
+    y0[V.mTHBS1] = 5.581e+02
