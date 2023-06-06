@@ -30,7 +30,6 @@ class DifferentialEquation(object):
         v[17] = x[C.prod_mcFOS]*y[V.TGFBR_act]**x[C.n2_TGF]/(x[C.Km_2_TGF]**x[C.n2_TGF]+y[V.TGFBR_act]**x[C.n2_TGF]) # cFOS
         v[18] = x[C.mcFOS_turn]*y[V.mcFOS]
         v[19] = x[C.prod_cFOS]*y[V.mcFOS] #Translation of cFOS
-        #Inactive reaction
         v[20] = x[C.k_off_FMOD]*y[V.FMOD_complex]
         v[21] = x[C.k_off_ppS2_ppS3_S4]*y[V.ppS2_ppS3_S4]
         v[22] = x[C.k_off_ppS2_ppS3_S4_cFOS]*y[V.ppS2_ppS3_S4_cFOS]
@@ -38,8 +37,7 @@ class DifferentialEquation(object):
         v[24] = x[C.prod_mTHBS1]*y[V.ppS2_ppS3_S4_cFOS]**x[C.n4_TGF]/(x[C.Km_4_TGF]**x[C.n4_TGF]+y[V.ppS2_ppS3_S4_cFOS]**x[C.n4_TGF]) # THBS1
         v[25] = x[C.THBS1_turn]*y[V.mTHBS1]
         v[26] = x[C.prod_THBS1]*y[V.mTHBS1] #Translation of THBS1
-        #Degradation od proteins
-        v[27] = x[C.degrad_cFOS]*y[V.cFOS] 
+        v[27] = x[C.degrad_cFOS]*y[V.cFOS] #Degradation of cFos proteins
 
         if self.perturbation:
             for i, dv in self.perturbation.items():

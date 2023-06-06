@@ -14,13 +14,8 @@ class DifferentialEquation(object):
         """
     def diffeq(self, t, y, *x):
         """Integrated model
+        - Original TGFb model
         - Imoto H et al., Cancers (2020)
-        - Original TGFβ-cFos model
-        """
-        """
-        All units are in terms of s and nM:  Concentration (nM), Vmax (nM/s), kcat (1/s), kon (1/s/nM), 
-        koff (1/s), Km (nM), Kd (nM), kf (1/s), kr(1/s), kPTP (1/s), kdeg (1/s).
-        sigma: membrane-localized states
         """
         #Description of variable names
         """
@@ -108,17 +103,15 @@ class DifferentialEquation(object):
         v[16] = x[C.prod_S7]*y[V.mS7] #Translation of SMAD7
         v[17] = x[C.prod_mcFOS]*y[V.TGFBR_act]**x[C.n2_TGF]/(x[C.Km_2_TGF]**x[C.n2_TGF]+y[V.TGFBR_act]**x[C.n2_TGF]) # cFOS
         v[18] = x[C.mcFOS_turn]*y[V.mcFOS]
-        v[19] = x[C.prod_cFOS]*y[V.mcFOS] #Translation of cFOS
-        #Inactive reaction
-        v[20] = x[C.k_off_FMOD]*y[V.FMOD_complex]
-        v[21] = x[C.k_off_ppS2_ppS3_S4]*y[V.ppS2_ppS3_S4]
-        v[22] = x[C.k_off_ppS2_ppS3_S4_cFOS]*y[V.ppS2_ppS3_S4_cFOS]
+        v[19] = x[C.prod_cFOS]*y[V.mcFOS] #Translation of cFos
+        v[20] = x[C.k_off_FMOD]*y[V.FMOD_complex] #Inactive reaction
+        v[21] = x[C.k_off_ppS2_ppS3_S4]*y[V.ppS2_ppS3_S4] #Inactive reaction
+        v[22] = x[C.k_off_ppS2_ppS3_S4_cFOS]*y[V.ppS2_ppS3_S4_cFOS] #Inactive reaction
         v[23] = x[C.k_on_ppS2_ppS3_S4_cFOS]*y[V.ppS2_ppS3_S4]*y[V.cFOS] #Epigenetic complex formation
-        v[24] = x[C.prod_mTHBS1]*y[V.ppS2_ppS3_S4_cFOS]**x[C.n4_TGF]/(x[C.Km_4_TGF]**x[C.n4_TGF]+y[V.ppS2_ppS3_S4_cFOS]**x[C.n4_TGF])
+        v[24] = x[C.prod_mTHBS1]*y[V.ppS2_ppS3_S4_cFOS]**x[C.n4_TGF]/(x[C.Km_4_TGF]**x[C.n4_TGF]+y[V.ppS2_ppS3_S4_cFOS]**x[C.n4_TGF]) #THBS1
         v[25] = x[C.THBS1_turn]*y[V.mTHBS1]
         v[26] = x[C.prod_THBS1]*y[V.mTHBS1] #Translation of THBS1
-        #Degradation od proteins
-        v[27] = x[C.degrad_cFOS]*y[V.cFOS] 
+        v[27] = x[C.degrad_cFOS]*y[V.cFOS] #Degradation of cFos proteins
     # VEGF model
     # FMOD regulation
     # Imoto H et al., Cancers (2020)
@@ -173,8 +166,7 @@ class DifferentialEquation(object):
     # TF activation by ppERK
         v[74] = x[C.kf_16_vegf]*y[V.TF_inact]*y[V.ppERKn]/(x[C.Kmf_16_vegf]+y[V.TF_inact]) #TF activation
         v[75] = x[C.kr_17_vegf]*y[V.TF_act]/(x[C.Kmr_17_vegf]+y[V.TF_act]) #TF deactivation
-    # Added Hill aquation for activate gene
-        v[76] = x[C.prod_mFMOD]*(y[V.TF_act])**x[C.n1_vegf]/((x[C.Km_18_vegf])**x[C.n1_vegf]+(y[V.TF_act])**x[C.n1_vegf])
+        v[76] = x[C.prod_mFMOD]*(y[V.TF_act])**x[C.n1_vegf]/((x[C.Km_18_vegf])**x[C.n1_vegf]+(y[V.TF_act])**x[C.n1_vegf]) #FMOD
         v[77] = x[C.degrad_mFMOD]*y[V.mFMOD]
         v[78] = x[C.prod_FMOD]*y[V.mFMOD] #Translation of FMOD
     #TGFbeta activation of PI3K AKT for FMOD inhibition
@@ -267,7 +259,6 @@ class DifferentialEquation(object):
         dydt[V.pERKn] = -v[69] + v[70] + v[72]*(x[C.Vc]/x[C.Vn])
         dydt[V.ppERKc] =  v[66] - v[68] - v[73]
         dydt[V.ppERKn] = -v[70] + v[73]*(x[C.Vc]/x[C.Vn])
-        #VEGF
         dydt[V.TF_inact]     = + v[75] - v[74]
         dydt[V.TF_act]     = + v[74] - v[75]
         dydt[V.mFMOD]     = + v[76] - v[77]
@@ -280,8 +271,7 @@ def param_values():
 
     x = [0] * C.NUM
 	
-	#If the value is 0, it will show error
-	#Parameters for TGFβ pathway were set by data fitting using TGFβ model only
+	#Parameters for TGFβ pathway were set by data fitting using TGFb_model
     # ----------TGFbeta1 activation
     x[C.kf_1_TGFbeta] = 4.923e-01
     x[C.Kmf_1_TGFbeta] = 2.529e+00
@@ -443,10 +433,8 @@ def param_values():
     x[C.KexppERK] = 1.30e-02
     x[C.Vn] = 0.22
     x[C.Vc] = 0.94
-    # ----------PI3K-Akt pathway
     x[C.act_PI3K] = 1.0
     x[C.inact_PI3K] = 1.0
-    # ----------VEGF pathway
     x[C.kf_16_vegf] = 1.0
     x[C.Kmf_16_vegf] = 1.0
     x[C.kr_17_vegf] = 1.0
