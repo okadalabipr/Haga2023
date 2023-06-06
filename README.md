@@ -1,5 +1,5 @@
 # Haga2023
-Highlights
+**Highlights**
 - Multi-omics analysis identified TGFβ1-SMAD4 as a key regulatory axis in human skin aging
 - THBS1 and FMOD identified as promoting and suppressing factors in skin aging, respectively
 - Mathematical model specific to the human skin aging suggested THBS1 as a controllable while FMOD as uncontrollable factor
@@ -7,7 +7,7 @@ Highlights
 
 <br>
 
-<img src="./figure/Graphical_abstract.png" width="500px">
+<img src="./figure/Graphical_abstract.pdf" width="500px">
 
 ## Installation
 
