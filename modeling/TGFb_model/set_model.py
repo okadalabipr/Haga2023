@@ -5,7 +5,21 @@ class DifferentialEquation(object):
     def __init__(self, perturbation):
         super(DifferentialEquation, self).__init__()
         self.perturbation = perturbation
-
+        #Parameters
+        """
+        t: time
+        y: state variable
+        x: constant parameter
+        dydt: time derivative of y
+        """
+        #Description of variable names
+        """Integrated model
+        - inact: inactive form
+        - act: active form
+        - S: SMAD
+        - p: phosphorylation
+        - m: mRNA
+        """
     # Refined Model
     def diffeq(self, t, y, *x):
         v = {}
