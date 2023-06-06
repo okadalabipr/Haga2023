@@ -33,14 +33,13 @@ R version 4.2.1
 
 ## Usage
 To reproduce results, please perform the analysis in the following order.
-* `1_HFF-1_in_house_RNAseq_analysis.sh`
-* `2_HFF-1_in_house_ATACseq_analysis.sh`
-* `3_HFF-1_in_house_ChIPseq_analysis.sh`
-* `4_Transcription_factor_enrichment.R`
-* `5_Gain_peaks_ATAC_ChIP_seq.R`
-* `6_Motif_enrichment_ATAC.sh`
-* `7_Differential_peak_ATAC_ChIP.sh`
-* `8_Gene_annotation_differential_peak_ATAC_ChIP.R`
-* `9_public_RNAseq_analysis.sh`
-* `10_heatmap_of_KEGG_analysis_invivo_invitro.R`
-
+* [`1_HFF-1_in_house_RNAseq_analysis.sh`](./1_HFF-1_in_house_RNAseq_analysis.sh/)
+* [`2_HFF-1_in_house_ATACseq_analysis.sh`](./2_HFF-1_in_house_ATACseq_analysis.sh/)
+* [`3_HFF-1_in_house_ChIPseq_analysis.sh`](./3_HFF-1_in_house_ChIPseq_analysis.sh/)
+* [`4_Transcription_factor_enrichment.R`](./4_Transcription_factor_enrichment.R/)
+* [`5_Gain_peaks_ATAC_ChIP_seq.R`](./5_Gain_peaks_ATAC_ChIP_seq.R/)
+* [`6_Motif_enrichment_ATAC.sh`](./6_Motif_enrichment_ATAC.sh/)
+* [`7_Differential_peak_ATAC_ChIP.sh`](./7_Differential_peak_ATAC_ChIP.sh/)
+* [`8_Gene_annotation_differential_peak_ATAC_ChIP.R`](./8_Gene_annotation_differential_peak_ATAC_ChIP.R/)`
+* [`9_public_RNAseq_analysis.sh`](./9_public_RNAseq_analysis.sh/)
+* [`10_heatmap_of_KEGG_analysis_invivo_invitro.R`](./10_heatmap_of_KEGG_analysis_invivo_invitro.R/)
