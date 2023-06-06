@@ -4,7 +4,7 @@ This repository contains the source code for the sequence analysis.
 Please refer to files in [`ref_file/`](./ref_file/). Required files are listed in each script.
 
 Primary analysis for RNA-seq was performed using script bellow.
-* RNA-seq -> `1_HFF-1_in_house_RNAseq_analysis.sh`
+* RNA-seq -> [`1_HFF-1_in_house_RNAseq_analysis.sh`](./code/1_HFF-1_in_house_RNAseq_analysis.sh/)
 
 Primary analysis for ATAC-seq and ChIP-seq were performed using an established pipeline.
 * ATAC-seq -> https://nf-co.re/atacseq/1.2.1
@@ -40,6 +40,6 @@ To reproduce results, please perform the analysis in the following order.
 * [`5_Gain_peaks_ATAC_ChIP_seq.R`](./code/5_Gain_peaks_ATAC_ChIP_seq.R/)
 * [`6_Motif_enrichment_ATAC.sh`](./code/6_Motif_enrichment_ATAC.sh/)
 * [`7_Differential_peak_ATAC_ChIP.sh`](./code/7_Differential_peak_ATAC_ChIP.sh/)
-* [`8_Gene_annotation_differential_peak_ATAC_ChIP.R`](./code/8_Gene_annotation_differential_peak_ATAC_ChIP.R/)`
-* [`9_public_RNAseq_analysis.sh`](./code/9_public_RNAseq_analysis.sh/)
-* [`10_heatmap_of_KEGG_analysis_invivo_invitro.R`](./code/10_heatmap_of_KEGG_analysis_invivo_invitro.R/)
+* [`8_Gene_annotation_differential_peak_ATAC_ChIP.R`](./code/8_Gene_annotation_differential_peak_ATAC_ChIP.R/)
+* [`9_Public_RNAseq_analysis.sh`](./code/9_Public_RNAseq_analysis.sh/)
+* [`10_Heatmap_correlation_invivo_invitro.R`](./code/10_Heatmap_correlation_invivo_invitro.R/)
