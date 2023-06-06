@@ -1,4 +1,4 @@
-# 10_heatmap_correlation_invivo_invitro.R
+# 10_Heatmap_correlation_invivo_invitro.R
 # Make Venn figure between public in vivo and in vitro
 # Make heat map of KEGG analysis in vitro and vitro
 # Make correlation figure of in vitro and vitro

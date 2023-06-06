@@ -2,7 +2,7 @@
 
 echo "####################################################################"
 echo "#              Dataset for in vitro dermal fibroblast senescence   #"
-echo "#              Analysis of pubilic HFF1                            #"
+echo "#              Analysis of public HFF1                             #"
 echo "#              citation: Marthandan et al., 2016                   #"
 echo "#              Data type:    RNA-seq (single-end)                  #"
 echo "#              PDL: PDL16, 26, 46, 64, 74                          #"
@@ -58,7 +58,7 @@ done
 
 echo "####################################################################"
 echo "#              Dataset for in vivo dermal fibroblast senescence    #"
-echo "#              Analysis of human skin fibroblast                   #"
+echo "#              Analysis of public human skin fibroblast            #"
 echo "#              citation: Fleischer et al., 2018                    #"
 echo "#              Data type:    RNA-seq (single-end)                  #"
 echo "####################################################################"
