@@ -41,5 +41,5 @@ To reproduce results, please perform the analysis in the following order.
 * [`6_Motif_enrichment_ATAC.sh`](./code/6_Motif_enrichment_ATAC.sh/)
 * [`7_Differential_peak_ATAC_ChIP.sh`](./code/7_Differential_peak_ATAC_ChIP.sh/)
 * [`8_Gene_annotation_differential_peak_ATAC_ChIP.R`](./code/8_Gene_annotation_differential_peak_ATAC_ChIP.R/)
-* [`9_Public_RNAseq_analysis.sh`](./code/9_Public_RNAseq_analysis.sh/)
-* [`10_Heatmap_correlation_invivo_invitro.R`](./code/10_Heatmap_correlation_invivo_invitro.R/)
+* [`9_public_RNAseq_analysis.sh`](./code/9_Public_RNAseq_analysis.sh/)
+* [`10_heatmap_correlation_invivo_invitro.R`](./code/10_Heatmap_correlation_invivo_invitro.R/)
