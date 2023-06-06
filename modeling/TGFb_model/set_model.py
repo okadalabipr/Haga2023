@@ -13,7 +13,7 @@ class DifferentialEquation(object):
         dydt: time derivative of y
         """
         #Description of variable names
-        """Integrated model
+        """
         - inact: inactive form
         - act: active form
         - S: SMAD
