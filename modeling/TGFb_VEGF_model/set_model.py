@@ -13,36 +13,38 @@ class DifferentialEquation(object):
         dydt: time derivative of y
         """
     def diffeq(self, t, y, *x):
-        """Integrated model
-        - Original TGFb model
-        - Imoto H et al., Cancers (2020)
+        """TGFb_VEGF_model
+        - TGFb_model
+        - VEGF_model #Modified from Imoto et al., Cancers (2020)
         """
         #Description of variable names
         """
-        - G: Grb2.
+        - E: VEGF
+        - E1: VEGFR
+        - G: Grb2
         - sigmaG: Grb2-containing species in which the Grb2 SH2 domain is bound to
         tyrosine-phosphorylated receptor dimer (EijP) or to tyrosine-phosphorylated Shc (SP),
         and both Grb2 SH3 domains are unbound.
-        - S: Shc.
+        - S: Shc
         - sigmaS: Shc-containing species in which the Shc SH2 domain is bound to
         tyrosine-phosphorylated receptor dimer (EijP) or to membrane-localized,
         tyrosine-phosphorylated GAB1 (AP), and Shc is unphosphorylated.
-        - I: PI-3K.
+        - I: PI-3K
         - sigmaI: PI-3K-containing species in which PI-3K is bound to
         tyrosine-phosphorylated receptor dimer (EijP) or to membrane-localized,
         tyrosine-phosphorylated GAB1 (AP).
-        - R: RasGAP.
+        - R: RasGAP
         - sigmaR: RasGAP-containing species in which RasGAP is bound to
         tyrosine-phosphorylated receptor dimer (EijP) or to membrane-localized,
         tyrosine-phosphorylated GAB1 (AP), but is not phosphorylated.
-        - T: PTP-1B.
+        - T: PTP-1B
         - sigmaT: PTP-1B-containing species in which PTP-1B is bound to
         tyrosine-phosphorylated receptor dimer (EijP) or to membrane-localized,
         tyrosine-phosphorylated GAB1 (AP).
-        - A: GAB1.
+        - A: GAB1
         - sigmaA: Gab1-containing species in which the GAB1 PH domain is bound to
         PIP3 or the PRD is bound to Grb2, and GAB1 is unphosphorylated.
-        - O: SOS.
+        - O: SOS
         - sigmaO: SOS-containing species that are bound to
         a membrane- localized N-terminal SH3 domain of Grb2.
         - c: cytoplasmic
@@ -83,12 +85,11 @@ class DifferentialEquation(object):
             f11 = 0.0
 
         v = {}
-    #TGFbeta1 activation(Original reaction)
+    # VEGF_model
         v[1] = x[C.kf_1_TGFbeta]*y[V.THBS1]*y[V.TGFb_inact]/(x[C.Kmf_1_TGFbeta] + y[V.TGFb_inact])
         v[2] = x[C.k_on_FMOD]*y[V.FMOD]*y[V.TGFb_act]
         v[3] = x[C.Rec_act]*y[V.TGFBR_inact]*y[V.TGFb_act] #TGFR activation
         v[4] = x[C.pRec_debind]*y[V.TGFBR_act]  #TGFR deactivation
-    # THBS1 regulation
         v[5] = x[C.kf_2_TGFbeta]*y[V.S2]*y[V.TGFBR_act]/(x[C.Kmf_2_TGFbeta]*(1+y[V.S7]/x[C.k_inhibit_TGF])+y[V.S2]) #SMAD2 activation by TGFR
         v[6] = x[C.S_dephosphos]*y[V.ppS2]
         v[7] = x[C.S_dephos]*y[V.pS2]
@@ -112,8 +113,7 @@ class DifferentialEquation(object):
         v[25] = x[C.THBS1_turn]*y[V.mTHBS1]
         v[26] = x[C.prod_THBS1]*y[V.mTHBS1] #Translation of THBS1
         v[27] = x[C.degrad_cFOS]*y[V.cFOS] #Degradation of cFos proteins
-    # VEGF model
-    # FMOD regulation
+    # VEGF_model
     # Imoto H et al., Cancers (2020)
         v[28] = (x[C.kon1]*y[V.E]*y[V.E1] - x[C.EGF_off]*y[V.E_E1]) #VEGF binding
         v[29] = (x[C.kon4]*y[V.E_E1]*y[V.E_E1] - x[C.koff4]*y[V.E11]) #VEGFR2 homodimer
