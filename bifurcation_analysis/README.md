@@ -1,11 +1,11 @@
-# Bifurcation analysis of TGF-β1, THBS1, and FMOD network
+# Bifurcation analysis of TGFβ1, THBS1, and FMOD network
 
 
 
 <br>
 
-## TGF-β1, THBS1, and FMOD network model
-Let $x_1$, $x_2$, and $x_3$ be [THBS1], [FMOD], and [TGF-β1], respectively.
+## TGFβ1, THBS1, and FMOD network model
+Let $x_1$, $x_2$, and $x_3$ be [THBS1], [FMOD], and [TGFβ1], respectively.
 Based on the experimental results, we constructed the following mathematical model.
 
 $$
@@ -22,7 +22,7 @@ $$
 \end{align}
 $$
 
-where $a/d_1$, $b/d_2$, and $c/d_3$ are maximal values of [THBS1], [FMOD], and [TGF-β1], respectively;
+where $a/d_1$, $b/d_2$, and $c/d_3$ are maximal values of [THBS1], [FMOD], and [TGFβ1], respectively;
 $K_a$, $K_b$, $K_1$, and $K_2$ are the half saturation constants; and
 $n_a$ and $n_b$ are Hill coefficients.
 
