@@ -22,7 +22,7 @@ library("DESeq2")
 library("gdata") 
 
 # Set were to save data
-setwd("d:/haga/HFF_RS_TGF/R/data_R/150bp/DoRothEA/") 
+setwd("D:/haga/github/Haga2023/bioinformatics/ref_file/") 
 
 ## We also load the support functions
 source("support_functions.R")
@@ -36,7 +36,7 @@ rm(list = ls())
 #Calculate TPM value
 #Read output from feautureCounts
 #Make object d
-d <- read.table("d:/haga/HFF_RS_TGF/featureCounts/20211025_HFF_counts.txt", header=T, stringsAsFactors = F)
+d <- read.table("D:/haga/HFF_RS_TGF/featureCounts/20211025_HFF_counts.txt", header=T, stringsAsFactors = F)
 
 # remove unwanted lines
 d <- d[,!colnames(d) %in% c("Chr", "Start", "End", "Strand")]
@@ -163,7 +163,7 @@ write.csv(norm_count, file= "TPM_normalized_data_cutoff_mean_5_proteincoding.csv
 #------------------------------------------------------------------------------------------------------------
 #Get DEGs between each PDL
 #Again read count data
-counts_deseq <- read.table("d:/haga/HFF_RS_TGF/featureCounts/20211025_HFF_counts.txt", header=T, stringsAsFactors = F)
+counts_deseq <- read.table("D:/haga/HFF_RS_TGF/featureCounts/20211025_HFF_counts.txt", header=T, stringsAsFactors = F)
 
 # remove unwanted lines
 counts_deseq <- counts_deseq[,!colnames(counts_deseq) %in% c("Chr", "Start", "End", "Strand")]

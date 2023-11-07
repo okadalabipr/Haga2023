@@ -1,6 +1,8 @@
+# 11_RNA_ATAC_Con_vs_TGF_THBS1_FMOD
 # Analysis of THBS1 and FMOD using RNA-seq and ATAC-seq
 
 # Libraies I need
+library(DESeq2)
 library(tidyverse)
 library(clusterProfiler)
 library(org.Hs.eg.db)
@@ -17,13 +19,90 @@ packageVersion("ChIPseeker")
 packageVersion("ClusterProfiler")
 
 #Set were to save data
-setwd("D:/onedrive/大阪大学/論文/Figure/") 
+setwd("D:/haga/github/Haga2023/bioinformatics/ref_file/") 
 
 # Check were you are now
 getwd() 
 
 # clear the decks
 rm(list = ls())
+
+# Make object
+counts_deseq <- read.table("20211025_HFF_counts.txt", header=T, stringsAsFactors = F)
+
+# remove unwanted lines
+counts_deseq <- counts_deseq[,!colnames(counts_deseq) %in% c("Chr", "Start", "End", "Strand")]
+counts_deseq
+counts_deseq <- counts_deseq[,c(1:8)]
+colnames(counts_deseq)
+colnames(counts_deseq) <- c("Geneid","Length",
+                            "HFF_PDL24_CON_1", "HFF_PDL24_CON_2", "HFF_PDL24_CON_3",
+                            "HFF_PDL24_TGF_1", "HFF_PDL24_TGF_2", "HFF_PDL24_TGF_3")
+#ion
+counts_deseq[,1] <- str_replace(counts_deseq[,1],
+                                pattern = ".[0-9]+$",
+                                replacement = "")
+
+counts_deseq <- counts_deseq[,c(1,3:ncol(counts_deseq))]
+colnames(counts_deseq)
+head(counts_deseq)
+
+# import data
+gene_set <- read.csv("TPM_normalized_data_cutoff_mean_5_proteincoding.csv", header = T, stringsAsFactors = F)
+gene_set <- gene_set$X %>% as.data.frame()
+gene_set <- dplyr::rename(gene_set, Geneid = .)
+gene_set
+
+# gene_set(TPM>5)
+#10303 genes
+sum(table(gene_set))
+counts_deseq <- dplyr::inner_join(gene_set, counts_deseq, by = "Geneid")
+colnames(counts_deseq)
+dim(counts_deseq)
+
+#group
+Con_TGF <-counts_deseq %>% column_to_rownames(var = "Geneid")
+colnames(Con_TGF)
+#------------------------------------------------------------------------------------------------------------
+
+#Make Tag for each groups
+group_Con_TGF <- data.frame(con = factor(c("Con","Con","Con",
+                                           "TGF","TGF","TGF")))
+
+# Change row name
+rownames(group_Con_TGF) <- c(colnames(Con_TGF))
+
+# Make_data_set_for_deseq
+dds_1 <- DESeqDataSetFromMatrix(countData = Con_TGF, colData = group_Con_TGF, design = ~ con)
+
+# Set ref
+dds_1$con <- relevel(dds_1$con, ref = "Con")
+
+# check
+relevel(dds_1$con, ref = "Con")
+
+# Run_deseq
+dds_1 <- DESeq(dds_1)
+
+# result
+res_A <- results(dds_1)
+
+# Make dataset for p value
+res_A<- res_A[,c(2,6)]%>% as.data.frame() %>% na.omit()%>% rownames_to_column(var ="ENSEMBL")
+
+#rename
+colnames(res_A) <- c("ENSEMBL","log2FoldChange","padj")
+
+# identify data of p<0.05
+res_A$sig <- if_else(res_A$padj <0.05, "TRUE", "FALSE")
+table(res_A$sig)
+
+# padj<0.05, 
+#arrage by log2FC
+graph_1 <- res_A %>% dplyr::arrange(by = log2FoldChange)
+graph_1
+#Save DEGs
+write.csv(graph_1,file = "PDL24_Con_vs_TGF_DEGs_p_0.05.csv")
 
 # load hg38
 txdb <- TxDb.Hsapiens.UCSC.hg38.knownGene
@@ -32,7 +111,7 @@ txdb <- TxDb.Hsapiens.UCSC.hg38.knownGene
 #Read Deseq2 outputs
 #PDL24
 #Control vs TGF-beta1
-PDL24_RNAseq <- read.csv("D:/haga/HFF_RS_TGF/R/data_R/150bp/DESeq2/PDL24_Con_vs_TGF_DEGs_p_0.05.csv",header = T,row.names = 1)
+PDL24_RNAseq <- read.csv("PDL24_Con_vs_TGF_DEGs_p_0.05.csv",header = T,row.names = 1)
 PDL24_RNAseq <- PDL24_RNAseq %>% filter(padj<0.05)
 PDL24_RNAseq <- PDL24_RNAseq[,c(1,2)]
 
@@ -44,7 +123,7 @@ nrow((PDL24_RNAseq))
 #PDL24
 #Control vs TGF-beta1
 #FDR < 0.05
-PDL24 <- read.table("D:/haga/HFF_RS_TGF_ATAC/results/bwa/mergedLibrary/macs/broadPeak/consensus/deseq2/HFF_PDL_24_CONvsHFF_PDL_24_TGF/HFF_PDL_24_CONvsHFF_PDL_24_TGF.mLb.clN.deseq2.FDR0.05.results.txt",header = T)
+PDL24 <- read.table("HFF_PDL_24_CONvsHFF_PDL_24_TGF.mLb.clN.deseq2.FDR0.05.results.txt",header = T)
 PDL24 <- PDL24[,c(2:6,8,12)]
 PDL24 <- PDL24 %>% filter(padj<0.05)
 head(PDL24)

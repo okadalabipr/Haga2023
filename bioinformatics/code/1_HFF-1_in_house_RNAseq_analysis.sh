@@ -13,7 +13,7 @@ echo "####################################################################"
 
 PROJECT_PATH=/mnt/d/haga/HFF_RS_TGF
 #Current directory (Directory containing fastq files)
-#/mnt/d/haga/HFF_RS_TGF/fastq
+#Download fastq from DRA
 
 for SAMPLE in `ls *_1.fq.gz`
 do

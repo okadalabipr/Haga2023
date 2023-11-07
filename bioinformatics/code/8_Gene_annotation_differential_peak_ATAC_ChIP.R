@@ -15,7 +15,7 @@ library(VennDiagram)
 library(ggplotify)
 
 #Set were to save data
-setwd("D:/haga/HFF_RS_TGF_ChIP/R/data/ChIPseeker/Paper/") 
+setwd("D:/haga/github/Haga2023/bioinformatics/ref_file/") 
 
 # Check were you are now
 getwd() 
@@ -29,6 +29,7 @@ txdb <- TxDb.Hsapiens.UCSC.hg38.knownGene
 # H3K27Ac
 # read Differential peak files(use nf-core output)
 H3K27Ac_p_0.05 <- readPeakFile("D:/haga/HFF_RS_TGF_ChIP/results/bwa/mergedLibrary/macs/broadPeak/consensus/Diff_H3K27Ac_PDL/Differential_H3K27Ac_output.bed")
+
 # ATAC
 # read Differential peak files(use nf-core output)
 ATAC_p_0.05 <- readPeakFile("D:/haga/HFF_RS_TGF_ATAC/results/bwa/mergedLibrary/macs/broadPeak/consensus/Diff_ATAC_PDL/Differential_ATAC_output.bed")

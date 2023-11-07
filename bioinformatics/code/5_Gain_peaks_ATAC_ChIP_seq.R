@@ -5,7 +5,7 @@
 library(tidyverse)
 
 #Set were to save data
-setwd("D:/haga/HFF_RS_TGF_ATAC/results/bwa/mergedLibrary/macs/broadPeak/consensus/deseq2/") 
+setwd("D:/haga/github/Haga2023/bioinformatics/ref_file/") 
 
 # Check were you are now
 getwd() 
@@ -15,7 +15,7 @@ rm(list = ls())
 
 # Read signal peaks
 # read Differential peak files(use nf-core output)
-peak_signal<-read.csv("consensus_peaks.mLb.clN.results.txt",header=T,sep="\t", stringsAsFactors = F)
+peak_signal<-read.csv("D:/haga/HFF_RS_TGF_ATAC/results/bwa/mergedLibrary/macs/broadPeak/consensus/deseq2/consensus_peaks.mLb.clN.results.txt",header=T,sep="\t", stringsAsFactors = F)
 colnames(peak_signal)
 
 #PDL24_vs_PDL36
@@ -54,7 +54,7 @@ write.table(PDL36_vs_PDL47_gain[,2:4],"ATAC_PDL36_PDL47_gain.bed",quote=F,sep="\
 # ChIP-seq (H3K27Ac)
 
 #Set were to save data
-setwd("D:/haga/HFF_RS_TGF_ChIP/results/bwa/mergedLibrary/macs/broadPeak/consensus/H3K27Ac/deseq2/") 
+setwd("D:/haga/github/Haga2023/bioinformatics/ref_file/") 
 
 # Check were you are now
 getwd() 
@@ -63,7 +63,7 @@ getwd()
 rm(list = ls())
 
 #Read signal peaks
-peak_signal<-read.csv("H3K27Ac.consensus_peaks.results.txt",header=T,sep="\t", stringsAsFactors = F)
+peak_signal<-read.csv("D:/haga/HFF_RS_TGF_ChIP/results/bwa/mergedLibrary/macs/broadPeak/consensus/H3K27Ac/deseq2/H3K27Ac.consensus_peaks.results.txt",header=T,sep="\t", stringsAsFactors = F)
 colnames(peak_signal)
 
 #PDL24_vs_PDL36
