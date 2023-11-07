@@ -6,6 +6,8 @@ echo "#              Analysis of HFF1                                    #"
 echo "#              Data prepared by Haga et al                         #"
 echo "#              Data type:    ChIP-seq (Paired-end)                 #"
 echo "#              PDL: PDL24, 36, 47                                  #"
+echo "#              Treatment: Control                                  #"
+echo "#              Data availability: PRJDB15707                       #"
 echo "#              N=2                                                 #"
 echo "####################################################################"
 
