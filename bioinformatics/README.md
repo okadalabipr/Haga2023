@@ -7,8 +7,8 @@ Primary analysis for RNA-seq was performed using script bellow.
 * RNA-seq -> [`1_HFF-1_in_house_RNAseq_analysis.sh`](./code/1_HFF-1_in_house_RNAseq_analysis.sh/)
 
 Primary analysis for ATAC-seq and ChIP-seq were performed using an established pipeline.
-* ATAC-seq -> https://nf-co.re/atacseq/1.2.1
-* ChIP-seq -> https://nf-co.re/chipseq/1.2.2
+* ATAC-seq -> [`2_HFF-1_in_house_ATACseq_analysis.sh`](./code/2_HFF-1_in_house_ATACseq_analysis.sh/)
+* ChIP-seq -> [`3_HFF-1_in_house_ChIPseq_analysis.sh`](./code/3_HFF-1_in_house_ChIPseq_analysis.sh/)
 
 ## Requirements
 ### Software and Algorithms
