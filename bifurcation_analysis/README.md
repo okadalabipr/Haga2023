@@ -1,4 +1,4 @@
-# Bifurcation analysis of TGFβ1, THBS1, and FMOD network
+# Bifurcation analysis of TGF-β1, THBS1, and FMOD network
 
 
 
@@ -60,7 +60,7 @@ gnuplot gscript_q.txt
 ```
 
 Likewise, we computed bifurcation diagrams of endogenous [THBS1], [FMOD],
-and [TGFβ1] with respect to a parameter gamma for TBFβ1 using the
+and [TGFβ1] with respect to a parameter gamma for TGF-β1 using the
 following command:
 
 ```sh
