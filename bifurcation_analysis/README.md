@@ -59,8 +59,8 @@ bash aout_002.sh
 gnuplot gscript_q.txt
 ```
 
-Similarly, we computed bifurcation diagrams of endogenous [THBS1], [FMOD],
-and [TGFβ1] with respect to a parameter gamma for TBFβ1 by the
+Likewise, we computed bifurcation diagrams of endogenous [THBS1], [FMOD],
+and [TGFβ1] with respect to a parameter gamma for TBFβ1 using the
 following command:
 
 ```sh
