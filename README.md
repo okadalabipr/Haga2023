@@ -7,7 +7,7 @@
 
 <br>
 
-<img src="./figure/Graphical_abstract.PNG" width="400px">
+<img src="./figure/Graphical_abstract.pdf" width="400px">
 
 ## Installation
 
