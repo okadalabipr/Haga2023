@@ -2,7 +2,7 @@
 # Fit the steady state model of THBS1, FMOD, and TGFb1 expressions to the
 # experimental data (Fig. 3A).
 #
-# M. Haga, K. Iida, M. Okada (2023)
+# Author: Keita Iida (Haga, Iida, Okada, 2023)
 #=============================================================================80
 
 reset
@@ -17,9 +17,13 @@ data = '01_outgoing/x.txt'
 #-----------------------------------------------------------------------------80
 unset key
 set border lw 3
-set xlabel font "Helvetica,10"
-set ylabel font "Helvetica,10"
-set tics   font "Helvetica,10"
+set xtics offset 2
+set ytics offset -1
+set zlabel offset -8
+set xlabel font "Helvetica,18"
+set ylabel font "Helvetica,18"
+set zlabel font "Helvetica,18"
+set tics   font "Helvetica,18"
 set tics scale 2
 set xtics nomirror
 set ytics nomirror
@@ -29,7 +33,7 @@ unset mztics
 
 set view 40, 320, 1, 1
 set ticslevel 0
-set isosample 50
+set isosample 100
 set hidden3d
 
 set xlabel 'K1'
@@ -39,6 +43,9 @@ set zlabel 'TGFb1'
 # Plot
 #-----------------------------------------------------------------------------80
 n = 1
+set xtics 2
+set ytics 0.5
+set ztics 0.05
 sp [10:18][0:2][-0.01:0.16] \
 data every n:n u ($1):($2):($6<0 ? $5 : 1/0) w p ps 1 pt 5 lc rgb "red", \
 ''   every n:n u ($1):($2):($6>0 ? $5 : 1/0) w p ps 1 pt 5 lc rgb "blue", \

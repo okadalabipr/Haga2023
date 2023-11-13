@@ -1,6 +1,6 @@
 //============================================================================80
 // Compute steady state solutions for THBS1, FMOD, and TGFb1 expressions, wrt
-// parameters for THBS1 and FMOD, i.e., K1 (p) and K2 (q), respectively.
+// parameters for PDL.
 //
 // Author: Keita Iida (Haga, Iida, Okada, 2023)
 //============================================================================80
@@ -12,10 +12,12 @@
 //----------------------------------------------------------------------------80
 // Control parameters
 //----------------------------------------------------------------------------80
-#define PMIN      10.0        // Parameter range for THBS1 (K1)
-#define PMAX      10.0        // Parameter range for THBS1 (K1)
-#define QMIN      0.1         // Parameter range for FMOD (K2)
-#define QMAX      2.0         // Parameter range for FMOD (K2)
+#define PMIN      0.46        // Parameter range for THBS1 (K1)
+#define PMAX      0.46        // Parameter range for THBS1 (K1)
+#define QMIN      0.62        // Parameter range for FMOD (K2)
+#define QMAX      0.62        // Parameter range for FMOD (K2)
+#define RMIN      0.0         // Parameter range for PDL
+#define RMAX      4.0         // Parameter range for PDL
 //----------------------------------------------------------------------------80
 // Parameters for Newton's method
 //----------------------------------------------------------------------------80
@@ -28,7 +30,7 @@
 //----------------------------------------------------------------------------80
 #define A        2.36
 #define B        0.33
-#define C        1.0
+#define C        0.0
 #define Ka       0.016
 #define Kb       0.002
 #define na       1.6

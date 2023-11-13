@@ -2,7 +2,7 @@
 // Compute steady state solutions for THBS1, FMOD, and TGFb1 expressions, wrt
 // parameters for THBS1 and FMOD, i.e., K1 (p) and K2 (q), respectively.
 //
-// M. Haga, K. Iida, M. Okada (2023)
+// Author: Keita Iida (Haga, Iida, Okada, 2023)
 //============================================================================80
 #include <stdio.h>
 #include <math.h>

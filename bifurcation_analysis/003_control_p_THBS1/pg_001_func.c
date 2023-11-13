@@ -2,7 +2,7 @@
 // Compute steady state solutions for THBS1, FMOD, and TGFb1 expressions, wrt
 // parameters for THBS1 and FMOD, i.e., K1 (p) and K2 (q), respectively.
 //
-// M. Haga, K. Iida, M. Okada (2023)
+// Author: Keita Iida (Haga, Iida, Okada, 2023)
 //============================================================================80
 #include <stdio.h>
 #include <math.h>
@@ -70,7 +70,7 @@ double dgdx( double x, double p, double q )
   KB  = q / B;
 
   term1 = (na - 1) * C * KB * pow( x, na - 2 ) * (xnb + Kb);
-  term2 = nb * C * KB * pow( x, 2 * (na - 1) );
+  term2 = nb * C * KB * pow( x, na - 1 ) * pow( x, nb - 1 );
   term3 = na * (1 + KA) * pow( x, na - 1 ) * (Kb + KB * (xnb + Kb));
   term4 = (xna + KA * (xna + Ka)) * nb * KB * pow( x, nb - 1 );
 

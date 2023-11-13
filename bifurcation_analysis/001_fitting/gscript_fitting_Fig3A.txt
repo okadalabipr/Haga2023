@@ -2,7 +2,7 @@
 # Fit the steady state model of THBS1, FMOD, and TGFb1 expressions to the
 # experimental data (Fig. 3A).
 #
-# M. Haga, K. Iida, M. Okada (2023)
+# Author: Keita Iida (Haga, Iida, Okada, 2023)
 #=============================================================================80
 
 reset
