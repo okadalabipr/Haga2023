@@ -17,8 +17,9 @@ $ git clone https://github.com/okadalabipr/Haga2023.git
 
 ## Contents
 
-- [`bioinformatics/`](./bioinformatics/): sequencing data analysis
 - [`bifurcation_analysis/`](./bifurcation_analysis/): bifurcation analysis of TGF-β1, THBS1, and FMOD network
+- [`bioinformatics/`](./bioinformatics/): sequencing data analysis
+- [`figure/`](./figure/): graphical abstract
 - [`modeling/`](./modeling/): mathematical modeling of TGF-β and VEGF signaling pathway dynamics on skin aging
 
 
