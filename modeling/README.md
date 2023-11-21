@@ -15,10 +15,11 @@ We generated two mathematical models, [`TGFb_model/`](./TGFb_model/) and [`TGFb_
 
 | Name                            | Content                                                                                                                     |
 | --------------------------------| ----------------------------------------------------------------------------------------------------------------------------|
+| [`MethodS.md`]                  | Differential equation, parameters and initial condition                                                                     |
 | [`name2idx/`]                   | Names of model parameters and species                                                                                       |
 | [`out/`]                        | Parameter values that are estimated from experimental data                                                                  |
 | [`reaction_network.py`]         | Reaction indices grouped according to biological processes                                                                  |
-| [`set_model.py`]                | Differential equation, parameters and initial condition                                                                     |
+| [`set_model.py`]                | Differential equation, parameters and initial condition to run biomass                                                      |
 | [`observalbe.py`]               | Observables, simulations and experimental data                                                                              |
 | [`viz.py`]                      | Plotting parameters for customizing figure properties                                                                       |
 | [`set_search_param.py`]         | Lower and upper bounds of model parameters to be estimated                                                                  |
