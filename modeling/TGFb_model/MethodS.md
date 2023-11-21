@@ -116,7 +116,7 @@
         x[C.degrad_cFOS] = 1.000e-01
 
 # None zero initial values for 'Control' condition
-# y0[V.TGFb_act] =0 for 'Control'
+## y0[V.TGFb_act] =0 for 'Control'
         y0[V.TGFb_inact] = 0.013
         y0[V.TGFBR_inact] = 4.475e+01
         y0[V.S2] = 6.000e-02
@@ -126,7 +126,7 @@
         y0[V.mcFOS] = 1.225e-01
         y0[V.mTHBS1] = 5.581e+02
 # None zero initial values for 'TGFβ1' condition
-# y0[V.TGFb_act] = 0.0902 for 'TGFβ1'
+## y0[V.TGFb_act] = 0.0902 for 'TGFβ1'
         y0[V.TGFb_inact] = 0.013
         y0[V.TGFb_act] =0.0902
         y0[V.TGFBR_inact] = 4.475e+01

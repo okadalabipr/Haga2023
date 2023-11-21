@@ -86,7 +86,7 @@
     v = {}
 
 # Rate reactions
-# TGFb_model 
+## TGFb_model 
         v[1] = x[C.kf_1_TGFbeta]*y[V.THBS1]*y[V.TGFb_inact]/(x[C.Kmf_1_TGFbeta] + y[V.TGFb_inact])
         v[2] = x[C.k_on_FMOD]*y[V.FMOD]*y[V.TGFb_act]
         v[3] = x[C.Rec_act]*y[V.TGFBR_inact]*y[V.TGFb_act]
@@ -114,7 +114,7 @@
         v[25] = x[C.THBS1_turn]*y[V.mTHBS1]
         v[26] = x[C.prod_THBS1]*y[V.mTHBS1] 
         v[27] = x[C.degrad_cFOS]*y[V.cFOS] 
-# VEGF_model 
+## VEGF_model 
         v[28] = (x[C.kon1]*y[V.E]*y[V.E1] - x[C.EGF_off]*y[V.E_E1]) 
         v[29] = (x[C.kon4]*y[V.E_E1]*y[V.E_E1] - x[C.koff4]*y[V.E11]) 
         v[30] = (x[C.kf10]*y[V.E11] - x[C.VmaxPY]*y[V.E11P]/(x[C.KmPY] + y[V.E11P]) - x[C.kPTP10]*y[V.sigmaT]*y[V.E11P])
@@ -169,7 +169,7 @@
         v[79] = x[C.act_PI3K]*y[V.TGFBR_act]*y[V.I] - x[C.inact_PI3K]*y[V.sigmaI]
 
 # Equations of the model
-# TGFb_model 
+## TGFb_model 
         dydt[V.TGFb_inact] = - v[1]
         dydt[V.TGFb_act] = + v[1] - v[2] - v[3] + v[20]
         dydt[V.FMOD] = - v[2] + v[20]
@@ -192,7 +192,7 @@
         dydt[V.ppS2_ppS3_S4_cFOS] = + v[23] - v[22]
         dydt[V.mTHBS1] = + v[24] - v[25]
         dydt[V.THBS1] = + v[26]
-# VEGF_model 
+## VEGF_model 
         dydt[V.E] = (-v[28] - v[58])/VeVc
         dydt[V.E1] = -v[28] - v[56]
         dydt[V.E_E1] = v[28] - v[29] - v[29] - v[57] #VEGF_VEGFR
@@ -453,7 +453,7 @@
         x[C.w_FMOD] = 1.214e+00
 
 # None zero initial values for 'Control' condition
-# y0[V.TGFb_act] =0 for 'Control'
+## y0[V.TGFb_act] =0 for 'Control'
         y0[V.TGFb_inact] = 0.013
         y0[V.TGFBR_inact] = 4.475e+01
         y0[V.S2] = 6.000e-02
@@ -480,7 +480,7 @@
         y0[V.TF_inact] = 6.616e+01
         y0[V.mFMOD] = 2.536e+01
 # None zero initial values for 'TGFβ1' condition
-# y0[V.TGFb_act] = 0.0902 for 'TGFβ1'
+## y0[V.TGFb_act] = 0.0902 for 'TGFβ1'
         y0[V.TGFb_inact] = 0.013
         y0[V.TGFb_act] =0.0902
         y0[V.TGFBR_inact] = 4.475e+01
