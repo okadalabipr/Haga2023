@@ -70,5 +70,29 @@ bash aout_002.sh
 gnuplot gscript_r.txt
 ```
 
+## Figures 4C and S10B
+We computed distributions of [THBS1] and [FMOD] with respect to a parameters for THBS1.
 
+Below is our bash command:
 
+```sh
+cd 020_stochastic_simulation_forK1
+bash aout.sh
+```
+
+Similarly, we computed distributions of [THBS1] and [FMOD] with respect to a parameters for FMOD.
+
+Below is our bash command:
+
+```sh
+cd 021_stochastic_simulation_forK2
+bash aout.sh
+```
+
+Likewise, we computed distributions of endogenous [THBS1] and [FMOD] with respect to a parameter gamma for TGF-β1 using the
+following command:
+
+```sh
+cd 030_stochastic_simulation_forGamma
+bash aout.sh
+```
