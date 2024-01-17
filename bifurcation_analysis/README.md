@@ -4,7 +4,7 @@
 
 <br>
 
-## Figure S8A and S8B
+## Figure S8A and S8C
 Fitting our model to the experimental data using Gnuplot (version 5.4),
 we inferred the model parameters.
 
@@ -26,7 +26,7 @@ and `001_fitting/fit_gscript_fitting_Fig2AB.log`.
 
 <br>
 
-## Figures 4B, 4C, and 4D
+## Figures 4B, S8B, and 4D
 We computed a bifurcation diagram of [TGFβ1] with respect to parameters for
 THBS1 and FMOD.
 
