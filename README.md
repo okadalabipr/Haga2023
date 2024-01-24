@@ -2,7 +2,7 @@
 **Highlights**
 - Multi-omics analysis identified TGF-β1–SMAD4 as key regulators in human skin aging
 - THBS1 promoted and FMOD suppressed factors in skin aging
-- THBS1 controlled senescent and non-senescent state of the aging switch
+- THBS1 controlled high- and low-TGF-β1 state of the binary switch
 - SMAD4 is a potential target for inhibiting THBS1 expression and cell senescence
 
 <br>
